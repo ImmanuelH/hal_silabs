@@ -3,7 +3,7 @@
  * @brief EFR32MG21 USART register and bit field definitions
  ******************************************************************************
  * # License
- * <b>Copyright 2020 Silicon Laboratories, Inc. www.silabs.com</b>
+ * <b>Copyright 2021 Silicon Laboratories, Inc. www.silabs.com</b>
  ******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -67,9 +67,9 @@ typedef struct {
   __IOM uint32_t I2SCTRL;                       /**< I2S Control Register                               */
   __IOM uint32_t TIMING;                        /**< Timing Register                                    */
   __IOM uint32_t CTRLX;                         /**< Control Register Extended                          */
-  __IOM uint32_t TIMECMP0;                      /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP1;                      /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP2;                      /**< Used to generate interrupts and vario...           */
+  __IOM uint32_t TIMECMP0;                      /**< Timer Compare 0                                    */
+  __IOM uint32_t TIMECMP1;                      /**< Timer Compare 1                                    */
+  __IOM uint32_t TIMECMP2;                      /**< Timer Compare 2                                    */
   uint32_t       RESERVED0[997U];               /**< Reserved for future use                            */
   __IM uint32_t  IPVERSION_SET;                 /**< IPVERSION                                          */
   __IOM uint32_t EN_SET;                        /**< USART Enable                                       */
@@ -95,9 +95,9 @@ typedef struct {
   __IOM uint32_t I2SCTRL_SET;                   /**< I2S Control Register                               */
   __IOM uint32_t TIMING_SET;                    /**< Timing Register                                    */
   __IOM uint32_t CTRLX_SET;                     /**< Control Register Extended                          */
-  __IOM uint32_t TIMECMP0_SET;                  /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP1_SET;                  /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP2_SET;                  /**< Used to generate interrupts and vario...           */
+  __IOM uint32_t TIMECMP0_SET;                  /**< Timer Compare 0                                    */
+  __IOM uint32_t TIMECMP1_SET;                  /**< Timer Compare 1                                    */
+  __IOM uint32_t TIMECMP2_SET;                  /**< Timer Compare 2                                    */
   uint32_t       RESERVED1[997U];               /**< Reserved for future use                            */
   __IM uint32_t  IPVERSION_CLR;                 /**< IPVERSION                                          */
   __IOM uint32_t EN_CLR;                        /**< USART Enable                                       */
@@ -123,9 +123,9 @@ typedef struct {
   __IOM uint32_t I2SCTRL_CLR;                   /**< I2S Control Register                               */
   __IOM uint32_t TIMING_CLR;                    /**< Timing Register                                    */
   __IOM uint32_t CTRLX_CLR;                     /**< Control Register Extended                          */
-  __IOM uint32_t TIMECMP0_CLR;                  /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP1_CLR;                  /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP2_CLR;                  /**< Used to generate interrupts and vario...           */
+  __IOM uint32_t TIMECMP0_CLR;                  /**< Timer Compare 0                                    */
+  __IOM uint32_t TIMECMP1_CLR;                  /**< Timer Compare 1                                    */
+  __IOM uint32_t TIMECMP2_CLR;                  /**< Timer Compare 2                                    */
   uint32_t       RESERVED2[997U];               /**< Reserved for future use                            */
   __IM uint32_t  IPVERSION_TGL;                 /**< IPVERSION                                          */
   __IOM uint32_t EN_TGL;                        /**< USART Enable                                       */
@@ -151,9 +151,9 @@ typedef struct {
   __IOM uint32_t I2SCTRL_TGL;                   /**< I2S Control Register                               */
   __IOM uint32_t TIMING_TGL;                    /**< Timing Register                                    */
   __IOM uint32_t CTRLX_TGL;                     /**< Control Register Extended                          */
-  __IOM uint32_t TIMECMP0_TGL;                  /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP1_TGL;                  /**< Used to generate interrupts and vario...           */
-  __IOM uint32_t TIMECMP2_TGL;                  /**< Used to generate interrupts and vario...           */
+  __IOM uint32_t TIMECMP0_TGL;                  /**< Timer Compare 0                                    */
+  __IOM uint32_t TIMECMP1_TGL;                  /**< Timer Compare 1                                    */
+  __IOM uint32_t TIMECMP2_TGL;                  /**< Timer Compare 2                                    */
 } USART_TypeDef;
 /** @} End of group EFR32MG21_USART */
 

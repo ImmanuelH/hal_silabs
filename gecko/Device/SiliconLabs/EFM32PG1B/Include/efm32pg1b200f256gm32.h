@@ -4,7 +4,7 @@
  *        for EFM32PG1B200F256GM32
  *******************************************************************************
  * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2021 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -430,4 +430,5 @@ typedef enum IRQn{
 #ifdef __cplusplus
 }
 #endif
+
 #endif /* EFM32PG1B200F256GM32_H */

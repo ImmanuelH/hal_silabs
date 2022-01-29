@@ -234,10 +234,10 @@ typedef uint8_t TIMER_PRSSEL_TypeDef;
 #if defined (_TIMER_CC_CFG_INSEL_MASK)
 /** PRS input type */
 typedef enum {
-  timerPrsInputNone       =  0x0,                               /** No PRS input */
-  timerPrsInputSync       =  _TIMER_CC_CFG_INSEL_PRSSYNC,       /** Synchronous PRS selected */
-  timerPrsInputAsyncLevel =  _TIMER_CC_CFG_INSEL_PRSASYNCLEVEL, /** Asynchronous level PRS selected */
-  timerPrsInputAsyncPulse =  _TIMER_CC_CFG_INSEL_PRSASYNCPULSE, /** Asynchronous pulse PRS selected */
+  timerPrsInputNone       =  0x0,                               /**< No PRS input. */
+  timerPrsInputSync       =  _TIMER_CC_CFG_INSEL_PRSSYNC,       /**< Synchronous PRS selected. */
+  timerPrsInputAsyncLevel =  _TIMER_CC_CFG_INSEL_PRSASYNCLEVEL, /**< Asynchronous level PRS selected. */
+  timerPrsInputAsyncPulse =  _TIMER_CC_CFG_INSEL_PRSASYNCPULSE, /**< Asynchronous pulse PRS selected. */
 } TIMER_PrsInput_TypeDef;
 #endif
 
@@ -638,6 +638,8 @@ __STATIC_INLINE bool TIMER_SupportsDTI(const TIMER_TypeDef *ref)
  ******************************************************************************/
 __STATIC_INLINE uint32_t TIMER_MaxCount(const TIMER_TypeDef *ref)
 {
+  (void) ref;
+
 #if defined(WTIMER_PRESENT)
   if ((ref == WTIMER0)
 #if defined(WTIMER1)
@@ -652,10 +654,15 @@ __STATIC_INLINE uint32_t TIMER_MaxCount(const TIMER_TypeDef *ref)
       ) {
     return 0xFFFFFFFFUL;
   }
+#endif /* defined(WTIMER_PRESENT) */
+
+#if defined(_SILICON_LABS_32B_SERIES_2)
+  EFM_ASSERT(TIMER_NUM(ref) != -1);
+
+  return (1 << TIMER_CNTWIDTH(TIMER_NUM(ref))) - 1;
 #else
-  (void) ref;
-#endif
   return 0xFFFFUL;
+#endif /* defined(_SILICON_LABS_32B_SERIES_2) */
 }
 
 /***************************************************************************//**

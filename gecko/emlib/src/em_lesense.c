@@ -320,7 +320,7 @@ uint32_t LESENSE_ScanFreqSet(uint32_t refFreq, uint32_t scanFreq)
 #if defined(_SILICON_LABS_32B_SERIES_1) || defined(_SILICON_LABS_32B_SERIES_0)
     refFreq = CMU_ClockFreqGet(cmuClock_LESENSE);
 #elif defined(_SILICON_LABS_32B_SERIES_2)
-    refFreq = CMU_ClockFreqGet(cmuClock_LESENSEHF);
+    refFreq = CMU_ClockFreqGet(cmuClock_LESENSECLK);
 #endif
   }
 
@@ -343,6 +343,7 @@ uint32_t LESENSE_ScanFreqSet(uint32_t refFreq, uint32_t scanFreq)
 
   /* Calculate the pcTop value. */
   pcTop = ((uint32_t)refFreq / ((uint32_t)scanFreq * clkDiv)) - 1UL;
+  EFM_ASSERT(pcTop <= (_LESENSE_TIMCTRL_PCTOP_MASK >> _LESENSE_TIMCTRL_PCTOP_SHIFT));
 
   /* Clear current PCPRESC and PCTOP settings. Be aware of the effect of
    * non-atomic Read-Modify-Write on LESENSE->TIMCRTL. */
